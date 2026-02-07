@@ -55,7 +55,7 @@ export default function PrintBillPage() {
                 <div className="flex justify-between items-start border-b-2 border-slate-800 pb-6 mb-8">
                     <div className="flex flex-col">
                         <h1 className="text-4xl font-bold text-slate-900 tracking-tight">TSL</h1>
-                        <p className="text-lg font-hind text-slate-600 mt-1">ॐ नमः शिवाय</p>
+
                     </div>
                     <div className="text-right">
                         <h2 className="text-2xl font-bold text-slate-300 uppercase tracking-widest">Invoice</h2>
