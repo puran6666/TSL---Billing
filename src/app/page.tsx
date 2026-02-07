@@ -8,8 +8,9 @@ import { BillForm } from '@/components/BillForm';
 import { BillTable } from '@/components/BillTable';
 import { SearchBar } from '@/components/SearchBar';
 import { DateFilter, DateFilterType } from '@/components/DateFilter';
+import { PrintView } from '@/components/PrintView';
 import { Bill } from '@/types';
-import { LayoutDashboard, Plus, X, Printer } from 'lucide-react';
+import { LayoutDashboard, Plus, X } from 'lucide-react';
 
 export default function Home() {
   const { bills, addBill, editBill, deleteBill, clearAllBills, isLoaded } = useBills();
@@ -265,11 +266,10 @@ export default function Home() {
             <div className="flex items-center gap-2 md:gap-3">
               <button
                 onClick={() => window.print()}
-                className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition-all shadow-lg shadow-blue-600/20 print:hidden"
-                title="Print List"
+                className="flex items-center gap-2 px-3 md:px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-sm font-semibold transition-all shadow-lg print:hidden"
+                title="Print Bills"
               >
-                <Printer size={16} strokeWidth={2.5} />
-                <span>Print List</span>
+                <span>Print</span>
               </button>
               <span className="px-2 md:px-2.5 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-semibold">
                 {filteredBills.length} / {bills.length}
@@ -290,6 +290,9 @@ export default function Home() {
 
         </div>
       </div>
+
+      {/* Print View - Hidden on screen, visible when printing */}
+      <PrintView bills={filteredBills} />
     </div>
   );
 }

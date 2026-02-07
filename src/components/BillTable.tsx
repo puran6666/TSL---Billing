@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bill } from '@/types';
-import { Edit2, Trash2, AlertCircle, Printer } from 'lucide-react';
+import { Edit2, Trash2, AlertCircle } from 'lucide-react';
 import clsx from 'clsx';
 
 interface BillTableProps {
@@ -44,8 +44,7 @@ export const BillTable: React.FC<BillTableProps> = ({ bills, onEdit, onDelete })
                                 <th className="px-4 py-3 text-[10px] font-bold text-slate-600 uppercase tracking-wider text-right sticky top-0 bg-slate-50 z-10">Amount</th>
                                 <th className="px-4 py-3 text-[10px] font-bold text-slate-600 uppercase tracking-wider sticky top-0 bg-slate-50 z-10">Status</th>
                                 <th className="px-4 py-3 text-[10px] font-bold text-slate-600 uppercase tracking-wider sticky top-0 bg-slate-50 z-10">Dates</th>
-                                <th className="print:hidden px-4 py-3 text-[10px] font-bold text-slate-600 uppercase tracking-wider text-right sticky top-0 bg-slate-50 z-10">Actions</th>
-                                <th className="print:hidden px-4 py-3 text-[10px] font-bold text-slate-600 uppercase tracking-wider text-center sticky top-0 bg-slate-50 z-10">Print</th>
+                                <th className="px-4 py-3 text-[10px] font-bold text-slate-600 uppercase tracking-wider text-right sticky top-0 bg-slate-50 z-10">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
@@ -87,7 +86,7 @@ export const BillTable: React.FC<BillTableProps> = ({ bills, onEdit, onDelete })
                                             )}
                                         </div>
                                     </td>
-                                    <td className="print:hidden px-4 py-3.5 text-right space-x-1">
+                                    <td className="px-4 py-3.5 text-right space-x-1">
                                         <button
                                             onClick={() => onEdit(bill)}
                                             className="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
@@ -102,17 +101,6 @@ export const BillTable: React.FC<BillTableProps> = ({ bills, onEdit, onDelete })
                                         >
                                             <Trash2 size={14} strokeWidth={2.5} />
                                         </button>
-                                    </td>
-                                    <td className="print:hidden px-4 py-3.5 text-center">
-                                        <a
-                                            href={`/print-bill/${bill.id}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
-                                            title="Print Bill"
-                                        >
-                                            <Printer size={16} strokeWidth={2.5} />
-                                        </a>
                                     </td>
                                 </tr>
                             ))}
@@ -191,17 +179,6 @@ export const BillTable: React.FC<BillTableProps> = ({ bills, onEdit, onDelete })
                                     <Trash2 size={16} strokeWidth={2.5} />
                                     Delete
                                 </button>
-                            </div>
-                            <div className="mt-2 text-center">
-                                <a
-                                    href={`/print-bill/${bill.id}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-slate-600 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors font-semibold text-sm border border-slate-200"
-                                >
-                                    <Printer size={16} strokeWidth={2.5} />
-                                    Print Invoice
-                                </a>
                             </div>
                         </div>
                     ))
