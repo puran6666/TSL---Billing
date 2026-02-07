@@ -132,7 +132,7 @@ export default function Home() {
               <LayoutDashboard size={16} className="md:w-[18px] md:h-[18px]" strokeWidth={2.5} />
             </div>
             <h1 className="text-base md:text-lg font-bold text-slate-900 tracking-tight">
-              TSL - <span className="font-hind">ॐ नमः शिवाय</span>
+              TSL
             </h1>
           </div>
 
