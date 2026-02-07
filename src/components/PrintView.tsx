@@ -37,20 +37,7 @@ export const PrintView: React.FC<PrintViewProps> = ({ bills }) => {
                 }
             `}</style>
 
-            {/* Print Header */}
-            <div className="mb-6 border-b-2 border-slate-900 pb-4">
-                <h1 className="text-2xl font-bold text-slate-900">TSL - Bill Report</h1>
-                <p className="text-sm text-slate-600 mt-1">
-                    Generated on {new Date().toLocaleDateString('en-IN', {
-                        day: '2-digit',
-                        month: 'long',
-                        year: 'numeric'
-                    })}
-                </p>
-                <p className="text-sm text-slate-600">Total Bills: {bills.length}</p>
-            </div>
-
-            {/* Print Table */}
+            {/* Print Table - Only table, no header or footer */}
             <table className="w-full border-collapse text-sm">
                 <thead>
                     <tr className="border-b-2 border-slate-900">
@@ -99,11 +86,6 @@ export const PrintView: React.FC<PrintViewProps> = ({ bills }) => {
                     </tr>
                 </tfoot>
             </table>
-
-            {/* Print Footer */}
-            <div className="mt-8 text-xs text-slate-500 text-center border-t border-slate-300 pt-4">
-                <p>TSL - Bill Management System</p>
-            </div>
         </div>
     );
 };
